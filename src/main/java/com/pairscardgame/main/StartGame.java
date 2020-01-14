@@ -1,4 +1,4 @@
-package pairscardgame;
+package com.pairscardgame.main;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -10,33 +10,43 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import static com.pairscardgame.framework.ImageRetriever.getImage;
+
 
 public class StartGame extends JFrame {
 
-    JLabel lbl_menu = new JLabel(new ImageIcon("images/menu.jpg"));
+    JLabel lbl_menu = new JLabel(new ImageIcon(getImage("images/menu.jpg")));
 
     public StartGame() {
 
         lbl_menu.setBounds(0, 0, 400, 200);
 
         //--- title Label ---------------------------------------
-        JLabel lblTitle = new JLabel("Pairs Card Game");
+        JLabel lblTitle = new JLabel("PairsCardGame");
         lblTitle.setBackground(Color.WHITE);
         lblTitle.setForeground(Color.WHITE);
-        lblTitle.setFont(new Font("Forte", Font.PLAIN, 35));
+        lblTitle.setFont(new Font("Forte", Font.PLAIN, 28));
         lblTitle.setBounds(15, 30, 290, 50);
         add(lblTitle);
 
         //--- subtitle Label ---------------------------------------
-        JLabel lblSub = new JLabel("By Simon Achkar");
+        JLabel lblSub = new JLabel("Created By Simon Achkar");
         lblSub.setBackground(Color.WHITE);
         lblSub.setForeground(Color.WHITE);
         lblSub.setFont(new Font("Forte", Font.PLAIN, 16));
         lblSub.setBounds(25, 60, 290, 50);
         add(lblSub);
+        
+        //--- subtitle Label ---------------------------------------
+        JLabel lblSub2 = new JLabel("Forked/Modified By Kelvin Silva");
+        lblSub2.setBackground(Color.WHITE);
+        lblSub2.setForeground(Color.WHITE);
+        lblSub2.setFont(new Font("Forte", Font.PLAIN, 16));
+        lblSub2.setBounds(25, 90, 290, 50);
+        add(lblSub2);
 
         //--- message Label ---------------------------------------
-        JLabel lblMessage = new JLabel("Choose a difficulty:");
+        JLabel lblMessage = new JLabel("Choose a level:");
         lblMessage.setBackground(Color.WHITE);
         lblMessage.setForeground(Color.WHITE);
         lblMessage.setFont(new Font("Forte", Font.PLAIN, 26));

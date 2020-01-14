@@ -1,6 +1,7 @@
-package pairscardgame;
+package com.pairscardgame.main;
 
 import javax.swing.ImageIcon;
+import static com.pairscardgame.framework.ImageRetriever.getImage;
 import javax.swing.JLabel;
 
 /**
@@ -10,7 +11,7 @@ public class Card extends JLabel {
 
     //Variables ---------------------------------
     ImageIcon front,
-            back = new ImageIcon("images/back.png");
+            back = new ImageIcon(getImage("images/back.png"));
     int id;
     boolean isFront;
 

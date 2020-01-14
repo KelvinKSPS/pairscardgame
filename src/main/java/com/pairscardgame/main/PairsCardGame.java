@@ -1,5 +1,5 @@
-package pairscardgame;
-
+package com.pairscardgame.main;
+import static com.pairscardgame.framework.ImageRetriever.getImage;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Arrays;
@@ -18,7 +18,7 @@ public class PairsCardGame extends JFrame {
             correctCards = 0;
     boolean firstClick = true;
     Card selectedCard = null;
-    JLabel lblBg = new JLabel(new ImageIcon("images/background.jpg"));
+    JLabel lblBg = new JLabel(new ImageIcon(getImage("images/background.jpg")));
 
     //shuffle ------------------------------------------------------------------
     void shuffle(Card[] arr) {
@@ -84,10 +84,10 @@ public class PairsCardGame extends JFrame {
         this.setLayout(null);
 
         //--- Set lblText properties: ---------
-        JLabel lblText = new JLabel("Click on the deck to begin the game...");
+        JLabel lblText = new JLabel("Choose one deck");
         lblText.setForeground(Color.WHITE);
         lblText.setFont(new Font("Freestyle Script", Font.PLAIN, 40));
-        lblText.setBounds(200, 50, 500, 40);
+        lblText.setBounds(20, 50, 500, 28);
         add(lblText);
         //-------------------------------------
 
@@ -95,7 +95,7 @@ public class PairsCardGame extends JFrame {
 
         //---Create the cards
         for (int i = 1; i <= num; i++) {
-            cards[i - 1] = new Card(new ImageIcon("images/" + i + ".png"), i);
+            cards[i - 1] = new Card(new ImageIcon(getImage("images/" + i + ".png")), i);
             cards[i - 1].setBounds(30 - i / 2, i + 320, 100, 90);
             add(cards[i - 1]);
         }
@@ -144,7 +144,7 @@ public class PairsCardGame extends JFrame {
                                 WinFrame.setTitle("WINNER !!!");
                                 WinFrame.setLocationRelativeTo(null);
                                 WinFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-                                JLabel lblwin = new JLabel(new ImageIcon("images/youwin.gif"));
+                                JLabel lblwin = new JLabel(new ImageIcon(getImage("images/youwin.gif")));
                                 WinFrame.setLayout(new BorderLayout());
                                 JButton b1 = new JButton("OK");
                                 b1.addActionListener(new ActionListener() {
